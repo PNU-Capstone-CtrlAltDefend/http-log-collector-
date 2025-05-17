@@ -5,11 +5,11 @@ FastAPI 서버와 연동되며, 로그는 Fluentd를 통해 POST 방식으로 �
 
 ## 📁 디렉토리 구조
 http-log-collector/
-├── fluent.conf # Fluentd 설정 파일
+├── fluent.conf # Fluentd 설정 파일 //
 ├── scripts/
-│ └── install.sh # 초기 설치 스크립트
+│ └── install.sh # 초기 설치 스크립트 //
 ├── examples/
-│ └── sample-log.json # 샘플 로그 예시
+│ └── sample-log.json # 샘플 로그 예시 //
 └── README.md
 
 ### 📄 로그 필드 정의
