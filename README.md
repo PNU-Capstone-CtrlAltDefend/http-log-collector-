@@ -1,8 +1,6 @@
 # HTTP Log Collector
 
-이 리포지터리는 사용자 PC에서 발생하는 HTTP 요청 로그를 수집하여 중앙 서버로 전송하는 데몬 서비스입니다.  
-FastAPI 서버와 연동되며, 로그는 Fluentd를 통해 POST 방식으로 전송됩니다. 
-
+이 프로그램은 사용자 PC에서 발생하는 HTTP 요청, Email 전송, 로그온/로그오프, 디바이스 연결, 파일 복사 이벤트를 감지하고 로그를 전송하는 서비스입니다.
 ## 📁 디렉토리 구조
 http-log-collector/
 ├── fluent.conf # Fluentd 설정 파일 //
