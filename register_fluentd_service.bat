@@ -1,0 +1,13 @@
+@echo off
+echo [1/4] Unregistering existing Fluentd service (if any)...
+cmd /c '"C:\opt\td-agent\bin\fluentd.bat" --reg-winsvc u'
+
+echo [2/4] Registering Fluentd as a Windows service...
+cmd /c '"C:\opt\td-agent\bin\fluentd.bat" --reg-winsvc i --reg-winsvc-auto-start --reg-winsvc-fluentdopt="-c C:\opt\td-agent\etc\td-agent\td-agent.conf"'
+
+echo [3/4] Setting SID type to unrestricted...
+sc.exe sidtype fluentdwinsvc unrestricted
+
+echo [4/4] Starting Fluentd service...
+Start-Service fluentdwinsvc
+
