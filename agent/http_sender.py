@@ -19,7 +19,7 @@ def request(flow: http.HTTPFlow):
 
     try:
         event.Event('http_request', log_data)  # 태그: fluentd.http.http_request
-        print(f"[📡] {flow.request.method} {flow.request.pretty_url} → 전송 완료")
+        print(f"Http log sent successfully")
     except Exception as e:
-        print(f"[❌] 전송 실패: {e}")
+        print(f"Http log sent failed")
         print(traceback.format_exc())

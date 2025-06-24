@@ -14,6 +14,7 @@ def strip_html_tags(html):
 
 def request(flow: http.HTTPFlow):
     if "mail.naver.com" in flow.request.pretty_url and "/json/write/send" in flow.request.path:
+
         try:
             content = flow.request.get_text()
             data = urllib.parse.parse_qs(content)
@@ -33,6 +34,6 @@ def request(flow: http.HTTPFlow):
             }
 
             event.Event('webmail', log)
-
+            print("Email log sent successfully")
         except Exception as e:
             print("Error parsing email:", e)
